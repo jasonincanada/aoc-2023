@@ -1,0 +1,6 @@
+# The puzzle author asked us not to share our inputs
+input.txt
+
+launch.json
+Cargo.lock
+**/target/
