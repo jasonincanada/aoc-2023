@@ -55,7 +55,7 @@ fn part1(input: &Input, number_map: &NumberMap) -> u32 {
 fn part2(input: &Input, number_map: &NumberMap) -> u32 {
     // compute and sum the calibration values of each line with the full number map
     input.lines.iter()
-               .map(|line| get_calibration_value(line, &number_map))
+               .map(|line| get_calibration_value(line, number_map))
                .sum()
 }
 

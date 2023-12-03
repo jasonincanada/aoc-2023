@@ -84,7 +84,7 @@ impl std::str::FromStr for Handful {
         let mut blue = 0;
 
         for pair in s.split(',') {
-            let parts: Vec<&str> = pair.trim().split_whitespace().collect();
+            let parts: Vec<&str> = pair.split_whitespace().collect();
             if parts.len() != 2 {
                 return Err(format!("Invalid format: {}", pair));
             }
