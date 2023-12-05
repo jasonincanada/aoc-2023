@@ -74,7 +74,7 @@ fn part2(input: &Input) -> u32 {
 /*  Parsing  */
 
 // proper parsing this year with respect to error handling. chatgpt 4.0 wrote most of this
-impl std::str::FromStr for Handful {
+impl FromStr for Handful {
     type Err = String;
 
     // "3 blue, 4 red, 2 green"
