@@ -7,7 +7,7 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 | Day | Title                                                | Description                                      |
 | --- | ---------------------------------------------------- | ------------------------------------------------ |
 | 4   | [Scratchcards](./days/day04/src/main.rs)             | Count winning scratchcards                       |
-| 3   | [Gear Ratios](./days/day03/src/main.rs)              |                                                  |
+| 3   | [Gear Ratios](./days/day03/src/main.rs)              | Sum numbers on a 2D grid                         |
 | 2   | [Cube Conundrum](./days/day02/src/main.rs)           | Count marbles in a bag                           |
 | 1   | [Trebuchet?!](./days/day01/src/main.rs)              | Pick numbers out of a string                     |
 
