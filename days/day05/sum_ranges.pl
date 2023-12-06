@@ -7,10 +7,10 @@
 #  then  : "Can it read from stdin"
 #
 #   $ perl sum_ranges.pl < sample.txt
-#   Sum: 134
+#   Sum: 27
 #
 #   $ perl sum_ranges.pl < input.txt
-#   Sum: 17395126216
+#   Sum: 1934995782
 #
 
 use strict;
@@ -26,8 +26,8 @@ shift @tokens;
 # Initialize sum
 my $sum = 0;
 
-# Iterate and sum every second token
-for (my $i = 0; $i < @tokens; $i += 2) {
+# Iterate and sum every second token. [chatgpt started $i at 0 - jrh]
+for (my $i = 1; $i < @tokens; $i += 2) {
     $sum += $tokens[$i] if $tokens[$i] =~ /^\d+$/;
 }
 
