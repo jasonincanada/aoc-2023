@@ -6,6 +6,9 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      |
 | --- | ---------------------------------------------------- | ------------------------------------------------ |
+| 8   | [Haunted Wasteland](./days/day08/src/main.rs)        | Count cycles in a graph of nodes ½               |
+| 7   | Camel Cards                                          | Score poker hands                                |
+| 6   | Wait For It                                          |                                                  |
 | 5   | [If You Give A Seed A Fertilizer](./days/day05/src/main.rs) | Map a number through ranges of numbers ½  |
 | 4   | [Scratchcards](./days/day04/src/main.rs)             | Count winning scratchcards                       |
 | 3   | [Gear Ratios](./days/day03/src/main.rs)              | Sum numbers on a 2D grid                         |
