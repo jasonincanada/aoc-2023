@@ -6,6 +6,7 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      |
 | --- | ---------------------------------------------------- | ------------------------------------------------ |
+| 9   | [Mirage Maintenance](./days/day09/src/main.rs)       | Extrapolate from lists of numbers                |
 | 8   | [Haunted Wasteland](./days/day08/src/main.rs)        | Count cycles in a graph of nodes ½               |
 | 7   | Camel Cards                                          | Score poker hands                                |
 | 6   | Wait For It                                          |                                                  |
