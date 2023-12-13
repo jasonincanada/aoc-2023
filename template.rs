@@ -1,7 +1,5 @@
 // https://adventofcode.com/2023/day/1
 
-use std::str::FromStr;
-
 fn main() -> Result<(), String> {
 
     let sample = input_from("sample.txt")?;
@@ -29,6 +27,8 @@ fn part2(input: &Input) -> u32 {
 
 
 /* Parsing */
+
+use std::str::FromStr;
 
 // Read input from a file
 fn input_from(file: &str) -> Result<Input, String> {
