@@ -6,6 +6,8 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      |
 | --- | ---------------------------------------------------- | ------------------------------------------------ |
+| 13  | [Point of Incidence](./days/day13/src/main.rs)       | Two iterators over a 2D grid                     |
+| 12  | Hot Springs                                          | Count arrangements of symbols                    |
 | 11  | [Cosmic Expansion](./days/day11/src/main.rs)         | Shortest path between points in expanded space   |
 | 10  | [Pipe Maze](./days/day10/src/main.rs)                | Measure perimeter and area of a loop of pipes ½  |
 | 9   | [Mirage Maintenance](./days/day09/src/main.rs)       | Extrapolate from lists of numbers                |
