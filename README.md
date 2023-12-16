@@ -6,6 +6,9 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Day | Title                                                | Description                                      |
 | --- | ---------------------------------------------------- | ------------------------------------------------ |
+| 16  | [The Floor Will Be Lava](./days/day16/src/main.rs)   | Bounce light through a grid of mirrors           |
+| 15  | Lens Library                                         | Convert ASCII chars to numeric                   |
+| 14  | Parabolic Reflector Dish                             | Rolling marbles in a tilting maze game           |
 | 13  | [Point of Incidence](./days/day13/src/main.rs)       | Two iterators over a 2D grid                     |
 | 12  | Hot Springs                                          | Count arrangements of symbols                    |
 | 11  | [Cosmic Expansion](./days/day11/src/main.rs)         | Shortest path between points in expanded space   |
