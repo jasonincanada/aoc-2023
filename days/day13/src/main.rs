@@ -96,26 +96,26 @@ fn find_mirror_point(grid: &Grid<char>, part1: bool) -> Option<usize> {
 
 // we need to iterate over the grid. so this is the, um, Griderator
 struct Griderator<'a> {
-    iter: Box<dyn Iterator<Item=&'a char> + 'a>
+    iter: Box<dyn Iterator<Item=char> + 'a>
 }
 
-fn griderator(grid: &'_ Grid<char>,
-              indices: Box<dyn Iterator<Item=usize>>) -> Griderator<'_>
+fn griderator(grid: &Grid<char>,
+              indices: Box<dyn Iterator<Item=usize>>) -> Griderator
 {
     let flattened_iter =
         indices.map(move |index| &grid.elements[index]) // Select rows by indices
-               .flat_map(|row| row.iter());             // Flatten rows into chars
+               .flat_map(|row| row.iter().copied());    // Flatten rows into chars
 
     Griderator {
         iter: Box::new(flattened_iter),
     }
 }
 
-impl<'a> Iterator for Griderator<'a> {
+impl Iterator for Griderator<'_> {
     type Item = char;
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.iter.next().copied()
+        self.iter.next()
     }
 }
 
