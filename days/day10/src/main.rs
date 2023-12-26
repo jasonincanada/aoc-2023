@@ -67,7 +67,7 @@ impl Grid<char>
     // which of the possible directions from this position are valid ones, ie the pipe
     // in that direction is lined up properly for us to get to it from this position's pipe
     fn get_valid_directions(&self, p: &Position) -> Vec<Direction> {
-        let this_char = &self[p];
+        let this_char = self[p];
 
         self.directions_from(p)
             .into_iter()
@@ -76,10 +76,10 @@ impl Grid<char>
 
                 // contains: [T] -> T -> bool
                 match dir {
-                    Direction::Right => "J-7".contains(next_char) && "SL-F".contains(*this_char),
-                    Direction::Down  => "L|J".contains(next_char) && "SF|7".contains(*this_char),
-                    Direction::Left  => "F-L".contains(next_char) && "SJ-7".contains(*this_char),
-                    Direction::Up    => "F|7".contains(next_char) && "SL|J".contains(*this_char),
+                    Direction::Right => "J-7".contains(next_char) && "SL-F".contains(this_char),
+                    Direction::Down  => "L|J".contains(next_char) && "SF|7".contains(this_char),
+                    Direction::Left  => "F-L".contains(next_char) && "SJ-7".contains(this_char),
+                    Direction::Up    => "F|7".contains(next_char) && "SL|J".contains(this_char),
                 }
             })
             .collect()
