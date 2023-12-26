@@ -27,7 +27,7 @@ Visit the Advent of Code sub-reddit for discussions and other participants' code
 
 | Year                                              | Language | Stars (50) |
 | ------------------------------------------------- | -------- | ---------- |
-| [2023](https://github.com/jasonincanada/aoc-2023) | Rust     |            |
+| [2023](https://github.com/jasonincanada/aoc-2023) | Rust     | 22         |
 | [2022](https://github.com/jasonincanada/aoc-2022) | Rust     | 45         |
 | [2021](https://github.com/jasonincanada/aoc-2021) | C#       | 38         |
 | [2020](https://github.com/jasonincanada/aoc-2020) | Haskell  | 26         |
