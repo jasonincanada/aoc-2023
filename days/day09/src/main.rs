@@ -63,7 +63,7 @@ fn extrapolate(values: &[i32], generate: Generator) -> i32 {
     let diffs = differences(values);
     let rec = extrapolate(&diffs, generate);    // recursive call
 
-    generate(&values, rec)
+    generate(values, rec)
 }
 
 fn differences(nums: &[i32]) -> Vec<i32> {
