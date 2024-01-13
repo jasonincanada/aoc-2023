@@ -130,7 +130,7 @@ impl<T> Grid<T> {
     // copy the shape (height/width) of the grid but make its elements all empty EnergyLevels structs
     fn clone_for_energies(&self) -> Grid<EnergyLevels> {
         Grid {
-            elements: vec![ vec![ EnergyLevels::new(); self.width() ]; self.height() ]
+            elements: vec![ vec![ EnergyLevels::default(); self.width() ]; self.height() ]
         }
     }
 
@@ -173,17 +173,6 @@ struct EnergyLevels {
 }
 
 impl EnergyLevels {
-    
-    // start out unenergized
-    fn new() -> Self {
-        EnergyLevels {
-            right: false,
-            down: false,
-            left: false,
-            up: false,
-        }
-    }
-
     fn energize(&mut self, direction: &Direction) {
         match direction {
             Right => self.right = true,
@@ -204,6 +193,18 @@ impl EnergyLevels {
 
     fn is_energized_at_all(&self) -> bool {
         self.right || self.down || self.left || self.up
+    }
+}
+
+impl Default for EnergyLevels {
+    // start out unenergized
+    fn default() -> Self {
+        Self {
+            right: false,
+            down: false,
+            left: false,
+            up: false,
+        }
     }
 }
 
