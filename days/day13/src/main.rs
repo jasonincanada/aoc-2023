@@ -70,9 +70,7 @@ fn find_mirror_point(grid: &Grid<char>, part: &Part) -> Option<usize> {
             count_diffs += 1;
 
             match part {
-                Part1 => if count_diffs > 0 {
-                    continue 'next_k
-                },
+                Part1 => { continue 'next_k },
                 Part2 => {
                     // short-circuit this k attempt when there's more than one difference,
                     // we're looking for exactly one
