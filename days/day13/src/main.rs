@@ -64,27 +64,30 @@ fn find_mirror_point(grid: &Grid<char>, part: &Part) -> Option<usize> {
 
         let zipped = iter_backwards.zip(iter_forward);
 
-        for (b, f) in zipped {
-            if b == f { continue }
-            
-            count_diffs += 1;
+        match part {
+            Part1 => {
+                for (b, f) in zipped {
+                    if b == f { continue }
+                    continue 'next_k
+                }
+                return Some(k+1)
+            },
+            Part2 => {
+                for (b, f) in zipped {
+                    if b == f { continue }
+                    
+                    count_diffs += 1;
 
-            match part {
-                Part1 => { continue 'next_k },
-                Part2 => {
                     // short-circuit this k attempt when there's more than one difference,
                     // we're looking for exactly one
                     if count_diffs > 1 {
                         continue 'next_k
                     }
                 }
+                if count_diffs == 1 {
+                    return Some(k + 1)
+                }
             }
-        }
-
-        match part {
-            Part1                     => return Some(k + 1),
-            Part2 if count_diffs == 1 => return Some(k + 1),
-            Part2                     => continue
         }
     }
 
