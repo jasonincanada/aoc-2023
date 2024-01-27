@@ -25,31 +25,31 @@ struct Grid<T> {
 fn part1(input: &Input) -> usize {
     input.grids
          .iter()
-         .map(|grid| score_grid(grid, true))
+         .map(|grid| score_grid(grid, Part1))
          .sum()
 }
 
 fn part2(input: &Input) -> usize {
     input.grids
          .iter()
-         .map(|grid| score_grid(grid, false))
+         .map(|grid| score_grid(grid, Part2))
          .sum()
 }
 
-fn score_grid(grid: &Grid<char>, part1: bool) -> usize {
+fn score_grid(grid: &Grid<char>, part: Part) -> usize {
     let mut score = 0;
 
-    if let Some(row) = find_mirror_point(grid, part1) {
+    if let Some(row) = find_mirror_point(grid, &part) {
         score += row * 100
     }
-    if let Some(column) = find_mirror_point(&grid.transpose(), part1) {
+    if let Some(column) = find_mirror_point(&grid.transpose(), &part) {
         score += column
     }
     score
 }
 
 #[allow(unused_parens)]
-fn find_mirror_point(grid: &Grid<char>, part1: bool) -> Option<usize> {
+fn find_mirror_point(grid: &Grid<char>, part: &Part) -> Option<usize> {
     assert!(grid.elements.len() >= 2);
 
     'next_k: for k in 0..grid.elements.len()-1 {
@@ -69,24 +69,26 @@ fn find_mirror_point(grid: &Grid<char>, part1: bool) -> Option<usize> {
             
             count_diffs += 1;
 
-            if part1 {
-                if count_diffs > 0 {
+            match part {
+                Part1 => if count_diffs > 0 {
                     continue 'next_k
-                }
-            } else {
-                // short-circuit this k attempt when there's more than one difference,
-                // we're looking for exactly one
-                if count_diffs > 1 {
-                    continue 'next_k
+                },
+                Part2 => {
+                    // short-circuit this k attempt when there's more than one difference,
+                    // we're looking for exactly one
+                    if count_diffs > 1 {
+                        continue 'next_k
+                    }
                 }
             }
         }
 
-        if part1 {
-            return Some(k + 1)
-        } else {
-            if count_diffs == 1 {
-                return Some(k + 1)
+        match part {
+            Part1 => return Some(k + 1),
+            Part2 => {
+                if count_diffs == 1 {
+                    return Some(k + 1)
+                }
             }
         }
     }
@@ -145,6 +147,13 @@ impl<T: Clone> Grid<T> {
     }
 }
 
+enum Part {
+    Part1,
+    Part2
+}
+
+use Part::*;
+
 
 /* Parsing */
 
@@ -202,10 +211,11 @@ mod tests {
     #[test]
     fn test_find_mirror_point_part1() {
         let input = input_from("sample.txt").unwrap();
+        let part = Part1;
 
-        assert_eq!(None   , find_mirror_point(&input.grids[0], true));
-        assert_eq!(Some(5), find_mirror_point(&input.grids[0].transpose(), true));
-        assert_eq!(Some(4), find_mirror_point(&input.grids[1], true));
+        assert_eq!(None   , find_mirror_point(&input.grids[0], &part));
+        assert_eq!(Some(5), find_mirror_point(&input.grids[0].transpose(), &part));
+        assert_eq!(Some(4), find_mirror_point(&input.grids[1], &part));
     }
 }
 
