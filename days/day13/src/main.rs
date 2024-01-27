@@ -84,6 +84,8 @@ fn find_mirror_point(grid: &Grid<char>, part: &Part) -> Option<usize> {
                         continue 'next_k
                     }
                 }
+                
+                // count_diffs can still be zero here so we need this check
                 if count_diffs == 1 {
                     return Some(k + 1)
                 }
