@@ -82,12 +82,9 @@ fn find_mirror_point(grid: &Grid<char>, part: &Part) -> Option<usize> {
         }
 
         match part {
-            Part1 => return Some(k + 1),
-            Part2 => {
-                if count_diffs == 1 {
-                    return Some(k + 1)
-                }
-            }
+            Part1                     => return Some(k + 1),
+            Part2 if count_diffs == 1 => return Some(k + 1),
+            Part2                     => continue
         }
     }
 
